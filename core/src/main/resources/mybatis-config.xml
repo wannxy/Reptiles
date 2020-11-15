@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    <settings>-->
+<!--        <setting name="logImpl" value="STDOUT_LOGGING" />-->
+<!--    </settings>-->
+    <typeAliases>
+        <typeAlias type="org.niu.bean.jscj.Live" alias="Live"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://192.168.3.32:3306/jscj?characterEncoding=UTF-8&amp;useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+<!--        <package name="org.niu.mapping.jscj"/>-->
+        <mapper class="org.niu.mapping.jscj.LiveMapper"></mapper>
+    </mappers>
+
+</configuration>
